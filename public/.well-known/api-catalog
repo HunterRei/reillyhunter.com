@@ -1,0 +1,23 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://example.com/",
+      "service-doc": [
+        {
+          "href": "https://example.com/llms.txt",
+          "type": "text/plain"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://example.com/robots.txt",
+          "type": "text/plain"
+        },
+        {
+          "href": "https://example.com/sitemap.xml",
+          "type": "application/xml"
+        }
+      ]
+    }
+  ]
+}

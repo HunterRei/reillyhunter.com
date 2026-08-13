@@ -1,0 +1,20 @@
+# Your Name
+
+> Software engineer. I build digital products and teams.
+
+This is the personal website and blog of Your Name.
+
+## Writings
+
+Technical writings — add entries here as posts are published.
+
+## Technical Stack
+
+This website is built with:
+
+- **Framework**: Next.js (React)
+- **Styling**: Tailwind CSS
+- **Content**: Markdown for blog posts
+- **Internationalization**: next-intl
+- **Animations**: Framer Motion
+- **Language**: TypeScript

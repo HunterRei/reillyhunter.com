@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "title": "Your Name",
+    "description": "Software engineer. I build digital products and teams."
+  },
+  "appBar": {
+    "home": "Home",
+    "menu": "Menu",
+    "close": "Close",
+    "intro": "Intro",
+    "experiences": "Experiences",
+    "writings": "Writings",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "<serif><ui>Software</ui> engineer</serif>.\nI build <serif>digital products</serif> and <serif><teams>teams</teams></serif>.",
+    "description": {
+      "0": "A short introduction goes here. Talk about your background, what you focus on, and what drives you.",
+      "1": "I <url1><serif>did something notable</serif></url1> worth mentioning.",
+      "2": "Outside of work, I enjoy <serif>a hobby or interest</serif>. It keeps me sharp and balanced.",
+      "3": "Now, I'm <url2><serif>working on something new</serif></url2>."
+    }
+  },
+  "experience": {
+    "today": "Today",
+    "title": "Experience",
+    "jobs": {
+      "1": {
+        "title": "Company Name",
+        "role": "Your Role",
+        "duration": "2026 ~ Present"
+      },
+      "2": {
+        "title": "Previous Company",
+        "role": "Your Role",
+        "duration": "2023 ~ 2026"
+      },
+      "3": {
+        "title": "Earlier Company",
+        "role": "Your Role",
+        "duration": "2020 ~ 2023"
+      }
+    }
+  },
+  "posts": {
+    "title": "Writings",
+    "moreWritings": "More writings",
+    "backToWritings": "Back to writings",
+    "sometimesIWrite": "Sometimes I <serif>write</serif>."
+  },
+  "error404": {
+    "title": "Page Not Found",
+    "doesNotExist": "The page you are looking for does <serif>not exist</serif>."
+  },
+  "common": {
+    "backToHome": "Back to home",
+    "author": " - {author}"
+  },
+  "footer": {
+    "contact": "Contact",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "x": "𝕏",
+    "copyToClipboard": "Copy to clipboard",
+    "copyright": "© {year} Your Name",
+    "quote": "A short <serif>closing quote</serif> or personal motto goes here."
+  }
+}

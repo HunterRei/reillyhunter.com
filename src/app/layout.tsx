@@ -1,0 +1,155 @@
+import "@/static/css/globals.css";
+
+import type { ReactNode } from "react";
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
+
+import copy from "@/copy/en-EN.json";
+
+import { cn } from "@/utils/helpers";
+import { APP_URL } from "@/utils/const";
+import { links } from "@/utils/links";
+
+import { ScrollContainer } from "@/components/scroll-container";
+
+const sans = localFont({
+  src: [
+    {
+      path: "../static/fonts/GeneralSans-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../static/fonts/GeneralSans-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../static/fonts/GeneralSans-MediumItalic.woff2",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "../static/fonts/GeneralSans-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-sans",
+});
+
+const serif = localFont({
+  src: [
+    {
+      path: "../static/fonts/Gambetta-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../static/fonts/Gambetta-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../static/fonts/Gambetta-MediumItalic.woff2",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "../static/fonts/Gambetta-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-serif",
+});
+
+const mono = localFont({
+  src: [
+    {
+      path: "../static/fonts/RobotoMono-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-mono",
+});
+
+const personStructuredData = {
+  "@type": "Person",
+  "@id": `${APP_URL}/#person`,
+  name: copy.metadata.title,
+  url: APP_URL,
+  sameAs: [links.github, links.linkedin, links.x],
+} as const;
+
+const websiteStructuredData = {
+  "@type": "WebSite",
+  "@id": `${APP_URL}/#website`,
+  url: APP_URL,
+  name: copy.metadata.title,
+  description: copy.metadata.description,
+  inLanguage: "en-US",
+  publisher: {
+    "@id": `${APP_URL}/#person`,
+  },
+} as const;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [personStructuredData, websiteStructuredData],
+} as const;
+
+export const metadata: Metadata = {
+  metadataBase: new URL(APP_URL),
+  title: copy.metadata.title,
+  description: copy.metadata.description,
+  twitter: {
+    card: "summary_large_image",
+    images: "/og-image.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: APP_URL,
+    title: copy.metadata.title,
+    description: copy.metadata.description,
+    images: {
+      url: "/og-image.png",
+    },
+  },
+  icons: {
+    icon: { url: "/favicon.svg", type: "image/svg+xml", sizes: "any" },
+  },
+};
+
+const RootLayout = async ({ children }: { children: ReactNode }) => {
+  const locale = await getLocale();
+  const messages = await getMessages();
+
+  return (
+    <html lang={locale} className="scroll-smooth">
+      <body className="bg-blue-500 text-gray-600 antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <ScrollContainer
+            className={cn(sans.variable, serif.variable, mono.variable)}
+          >
+            {children}
+          </ScrollContainer>
+        </NextIntlClientProvider>
+
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
+      </body>
+    </html>
+  );
+};
+
+export default RootLayout;
