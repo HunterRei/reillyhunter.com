@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Your Name",
-    "description": "Software engineer. I build digital products and teams."
+    "title": "Hunter Reilly",
+    "description": "Frontend engineer. I build digital products and teams."
   },
   "appBar": {
     "home": "Home",
@@ -13,7 +13,7 @@
     "contact": "Contact"
   },
   "about": {
-    "title": "<serif><ui>Software</ui> engineer</serif>.\nI build <serif>digital products</serif> and <serif><teams>teams</teams></serif>.",
+    "title": "<serif><ui>Frontend</ui> engineer</serif>.\nI build <serif>digital products</serif> and <serif><teams>teams</teams></serif>.",
     "description": {
       "0": "A short introduction goes here. Talk about your background, what you focus on, and what drives you.",
       "1": "I <url1><serif>did something notable</serif></url1> worth mentioning.",
